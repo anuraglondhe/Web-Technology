@@ -1,0 +1,98 @@
+What is Web Technology?
+Web Technology is the technology which is using for the Web Application, websites, etc.
+
+
+
+Real-time examples of Web Technology
+Web-development
+
+
+What is JavaScript?
+Which file extension is used for JavaScript?
+Why do we use Node.js?
+
+
+
+
+//
+What is Web Technology?
+
+Web Technology refers to the tools, languages, and techniques used to create, design, develop, and maintain websites and web applications that run on the internet or intranet.
+
+It helps computers communicate with each other over the web and allows users to interact with websites through browsers like Chrome, Edge, or Firefox.
+
+
+
+Real-Time Examples of Web Technology
+
+Web Development (frontend + backend)
+
+Online shopping sites (Amazon, Flipkart)
+
+Social media platforms (Instagram, Facebook)
+
+Online banking systems
+
+E-learning platforms (Coursera, Udemy)
+
+Email services (Gmail, Outlook)
+
+
+
+What is JavaScript?
+
+JavaScript is a programming language used to make web pages interactive and dynamic.
+
+With JavaScript, you can:
+
+Validate forms
+
+Create animations
+
+Handle button clicks
+
+Update content without reloading the page
+
+Build full web applications (with frameworks like React, Angular)
+
+JavaScript works on:
+
+Frontend (browser)
+
+Backend (using Node.js)
+
+
+
+Which File Extension is Used for JavaScript?
+
+The file extension used for JavaScript is:
+
+.js
+
+
+
+Why Do We Use Node.js?
+
+Node.js is a runtime environment that allows JavaScript to run outside the browser, especially on the server.
+
+Reasons to use Node.js:
+
+Uses JavaScript for backend development
+
+Fast performance (built on Chrome’s V8 engine)
+
+Handles multiple users at the same time (non-blocking I/O)
+
+Ideal for real-time applications (chat apps, live streaming)
+
+Large ecosystem of packages (npm)
+
+Real-World Uses:
+
+REST APIs
+
+Chat applications
+
+Real-time dashboards
+
+Backend for web and mobile apps
