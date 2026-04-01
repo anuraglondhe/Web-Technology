@@ -1,0 +1,32 @@
+Express is a minimal and flexible web application framework for node.js that simplifies the development of web servers and APIs.
+
+Features:
+-routing 
+-middleware support
+-req and res handling
+-rest api creation
+-template rendaring
+
+
+npm:
+(Node Package Manager)
+
+
+
+Package.json file // This is configuration file
+
+Activities:
+Diff bet Package.json and Package-lock json
+Diff bet dev dependencies and dependencies
+http req study (get, post, delete, put, etc)
+Create a department project in which first we display department and once we click on department then we will see the students list of that department.
+
+Routing refers to determining how an application respond to the client req for a specific url and http mothods.
+
+Components of routing
+-http methods, handler paths, url paths
+
+
+Middleware in Express js
+Def: Middleware functions are functions that executes during the lifecycles of the req before sending the final response.
+They have access tool req, res, and next
