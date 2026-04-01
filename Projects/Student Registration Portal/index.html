@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Registration Form - JS Learning Project</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header>
+            <h1>🎓 Student Registration Portal</h1>
+            <p class="subtitle">Showcase of JavaScript Fundamentals</p>
+        </header>
+
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+            <div class="progress-steps">
+                <span class="step active" data-step="1">Personal Info</span>
+                <span class="step" data-step="2">Account Details</span>
+                <span class="step" data-step="3">Preferences</span>
+                <span class="step" data-step="4">Review</span>
+            </div>
+        </div>
+
+        <!-- Main Form Container -->
+        <div class="form-wrapper">
+            <form id="registrationForm" novalidate>
+                
+                <!-- Step 1: Personal Information -->
+                <div class="form-step active" id="step1">
+                    <h2>📝 Personal Information</h2>
+                    
+                    <div class="form-group">
+                        <label for="fullName">Full Name *</label>
+                        <input type="text" id="fullName" name="fullName" placeholder="Enter your full name">
+                        <span class="error-message" id="fullNameError"></span>
+                        <span class="success-message" id="fullNameSuccess"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" placeholder="your.email@example.com">
+                        <span class="error-message" id="emailError"></span>
+                        <span class="success-message" id="emailSuccess"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" placeholder="(123) 456-7890">
+                        <span class="error-message" id="phoneError"></span>
+                        <span class="success-message" id="phoneSuccess"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="age">Age *</label>
+                        <input type="number" id="age" name="age" placeholder="Enter your age" min="16" max="100">
+                        <span class="error-message" id="ageError"></span>
+                        <span class="success-message" id="ageSuccess"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="gender">Gender *</label>
+                        <select id="gender" name="gender">
+                            <option value="">Select Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <span class="error-message" id="genderError"></span>
+                    </div>
+
+                    <div class="button-group">
+                        <button type="button" class="btn btn-next" onclick="nextStep(1)">Next Step →</button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Account Details -->
+                <div class="form-step" id="step2">
+                    <h2>🔐 Account Details</h2>
+                    
+                    <div class="form-group">
+                        <label for="username">Username *</label>
+                        <input type="text" id="username" name="username" placeholder="Choose a username">
+                        <span class="error-message" id="usernameError"></span>
+                        <span class="success-message" id="usernameSuccess"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password *</label>
+                        <input type="password" id="password" name="password" placeholder="Create a strong password">
+                        <button type="button" class="toggle-password" onclick="togglePassword('password')">👁️</button>
+                        <div class="password-strength" id="passwordStrength"></div>
+                        <span class="error-message" id="passwordError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password *</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Re-enter password">
+                        <button type="button" class="toggle-password" onclick="togglePassword('confirmPassword')">👁️</button>
+                        <span class="error-message" id="confirmPasswordError"></span>
+                        <span class="success-message" id="confirmPasswordSuccess"></span>
+                    </div>
+
+                    <div class="button-group">
+                        <button type="button" class="btn btn-prev" onclick="prevStep(2)">← Previous</button>
+                        <button type="button" class="btn btn-next" onclick="nextStep(2)">Next Step →</button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Preferences -->
+                <div class="form-step" id="step3">
+                    <h2>⚙️ Preferences & Interests</h2>
+                    
+                    <div class="form-group">
+                        <label>Course Interests * (Select at least 2)</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="courses" value="JavaScript" onchange="updateCourseCount()">
+                                <span>JavaScript</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="courses" value="Python" onchange="updateCourseCount()">
+                                <span>Python</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="courses" value="Java" onchange="updateCourseCount()">
+                                <span>Java</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="courses" value="React" onchange="updateCourseCount()">
+                                <span>React</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="courses" value="Node.js" onchange="updateCourseCount()">
+                                <span>Node.js</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="courses" value="Data Science" onchange="updateCourseCount()">
+                                <span>Data Science</span>
+                            </label>
+                        </div>
+                        <span class="info-message" id="courseCount">Selected: 0</span>
+                        <span class="error-message" id="coursesError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="studyMode">Preferred Study Mode *</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="studyMode" value="fulltime">
+                                <span>Full-time</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="studyMode" value="parttime">
+                                <span>Part-time</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="studyMode" value="online">
+                                <span>Online</span>
+                            </label>
+                        </div>
+                        <span class="error-message" id="studyModeError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="comments">Additional Comments</label>
+                        <textarea id="comments" name="comments" rows="4" placeholder="Tell us anything else you'd like us to know..."></textarea>
+                        <span class="char-count" id="charCount">0 / 500 characters</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="checkbox-label terms-label">
+                            <input type="checkbox" id="terms" name="terms">
+                            <span>I agree to the <a href="#" onclick="showTerms(); return false;">Terms and Conditions</a> *</span>
+                        </label>
+                        <span class="error-message" id="termsError"></span>
+                    </div>
+
+                    <div class="button-group">
+                        <button type="button" class="btn btn-prev" onclick="prevStep(3)">← Previous</button>
+                        <button type="button" class="btn btn-next" onclick="nextStep(3)">Review →</button>
+                    </div>
+                </div>
+
+                <!-- Step 4: Review & Submit -->
+                <div class="form-step" id="step4">
+                    <h2>✅ Review Your Information</h2>
+                    
+                    <div class="review-section">
+                        <h3>Personal Information</h3>
+                        <div class="review-item">
+                            <span class="review-label">Full Name:</span>
+                            <span class="review-value" id="reviewFullName">-</span>
+                        </div>
+                        <div class="review-item">
+                            <span class="review-label">Email:</span>
+                            <span class="review-value" id="reviewEmail">-</span>
+                        </div>
+                        <div class="review-item">
+                            <span class="review-label">Phone:</span>
+                            <span class="review-value" id="reviewPhone">-</span>
+                        </div>
+                        <div class="review-item">
+                            <span class="review-label">Age:</span>
+                            <span class="review-value" id="reviewAge">-</span>
+                        </div>
+                        <div class="review-item">
+                            <span class="review-label">Gender:</span>
+                            <span class="review-value" id="reviewGender">-</span>
+                        </div>
+                    </div>
+
+                    <div class="review-section">
+                        <h3>Account Details</h3>
+                        <div class="review-item">
+                            <span class="review-label">Username:</span>
+                            <span class="review-value" id="reviewUsername">-</span>
+                        </div>
+                    </div>
+
+                    <div class="review-section">
+                        <h3>Preferences</h3>
+                        <div class="review-item">
+                            <span class="review-label">Selected Courses:</span>
+                            <span class="review-value" id="reviewCourses">-</span>
+                        </div>
+                        <div class="review-item">
+                            <span class="review-label">Study Mode:</span>
+                            <span class="review-value" id="reviewStudyMode">-</span>
+                        </div>
+                        <div class="review-item">
+                            <span class="review-label">Comments:</span>
+                            <span class="review-value" id="reviewComments">-</span>
+                        </div>
+                    </div>
+
+                    <div class="button-group">
+                        <button type="button" class="btn btn-prev" onclick="prevStep(4)">← Previous</button>
+                        <button type="submit" class="btn btn-submit">Submit Registration 🚀</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+
+        <!-- Statistics Dashboard -->
+        <div class="stats-dashboard" id="statsDashboard">
+            <h3>📊 Form Statistics</h3>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-label">Fields Completed:</span>
+                    <span class="stat-value" id="completedFields">0/12</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Form Progress:</span>
+                    <span class="stat-value" id="formProgress">0%</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Time Spent:</span>
+                    <span class="stat-value" id="timeSpent">0:00</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal" id="successModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <div class="success-icon">✅</div>
+            <h2>Registration Successful!</h2>
+            <p id="successMessage"></p>
+            <button class="btn" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
