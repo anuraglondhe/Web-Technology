@@ -1,49 +1,61 @@
-let myNum = new Number(123.4567);
+// ================================
+// How Functions Work
+// ================================
 
-console.log(myNum); //[Number: 123.4567]
-console.log(myNum.toString());//123.4567
-console.log(myNum.toString().length);//8
+// Function declaration
+// Function is a block of code that runs when it is called
+function greet(name) {
+    return `Hello ${name}`;
+}
 
-console.log(myNum.toFixed());//123 //toFixed() gives an approximate (rounded) value, not an exact cut value.
-console.log(myNum.toFixed(2));//123.46 //toFixed(n) rounds the number to n decimal places.
-console.log(myNum.toFixed(0));//123
+console.log(greet("Swapnil"));
+// Used to reuse code and avoid repetition
 
+// Function expression
+// Function stored in a variable
+const add = function(a, b) {
+    return a + b;
+};
 
-console.log("-------------------------------");
-let myNum2 = new Number(123);
-console.log(myNum2);
-console.log(myNum2.toString());
-console.log(myNum2.toString().length);//3
+console.log(add(5, 3));
 
-
-console.log("-------------------------------");
-//When we build e-commerce website and precision's value is so long.
-let t = 10000000000;
-console.log(t);
-console.log(t.toLocaleString('en-In'));//10,00,00,00,000  //Indian Standard
-
-
-console.log("-------------------------------");
-//Math
-console.log("Math");
-console.log(Math.abs(-583));//583
-console.log(Math.round(4.7));//5
-console.log(Math.round(4.3));//4
-console.log(Math.ceil(4.6));//5
-console.log(Math.floor(4.6));//4
-console.log(Math.min(1,2,3,4));//1
-console.log(Math.max(1,2,5,6));//6
+// Arrow function
+// Shorter way to write functions
+const multiply = (a, b) => a * b;
+console.log(multiply(4, 2));
 
 
 
-//HW
-console.log(Math.random());//returns a number from 0 (inclusive) up to but not including 1.
+// ================================
+// Arrays in JavaScript
+// ================================
 
-console.log(Math.floor(Math.random() * 10)); //floor removes decimals.
-
-console.log(Math.random() * 100); 
-
-
+// Array stores multiple values in one variable
+let arr = [10, 20, 30, 40, 50];
+console.log(arr);
 
 
-console.log(Math.PI); //Gives value of pi.
+
+// ================================
+// Basic Array Methods
+// ================================
+
+// push()
+// Adds element at the end
+arr.push(60);
+console.log(`After push : ${arr}`);
+
+// pop()
+// Removes last element
+arr.pop();
+console.log(`After pop : ${arr}`);
+
+// unshift()
+// Adds element at the beginning
+arr.unshift(5);
+console.log(`After unshift : ${arr}`);
+
+// shift()
+// Removes first element
+arr.shift();
+console.log(`After shift : ${arr}`);

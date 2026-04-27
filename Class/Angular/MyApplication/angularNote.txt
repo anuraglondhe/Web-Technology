@@ -1,0 +1,70 @@
+pachage.json- is a configuration file information about your project 
+package..json is a   detailed information file
+
+angular.json is a project configuration file 
+
+style.css is a global css style file
+
+gitignore is file controls version control file
+
+editorconfig
+
+index.html is main html file loads angular
+
+main.ts is entry poiint of app. Bootstraps
+
+app.config.ts is 
+
+
+There are two types of data types primitive and non primitive
+data types declaration
+
+name:string = "Anurag";
+
+let name:string = "Anurag";
+let age:number =20;
+let isPresent:boolean = true;
+
+Components: is a UI blocks of structure. When we create Component Component create four files HTML, CSS, TS, spec.ts
+ng generate Component Component_name
+
+There are 2 types of data binding 
+one way:
+two way
+
+Interpolation Sytax
+{{value}}
+
+Property Syntax:
+{Property}="value
+
+data    binding means connect UI to code
+
+
+
+
+There are two types of directives 
+-structural directive
+-Attribute directive
+
+directives means think of directive like magic-wands that can change your web page with redirecting 
+1. structural-Change the structure of your page like add , remove , repeated things 
+2. Attribute-Change the look and style
+
+-----------------------Activity17-04-2026---------------------
+
+1.Deep study about directives with examples
+
+Concept- 
+
+Modules- Before angular15 needs Modules nowadays we are using angular 21 versions so Modules are optionals . We can now use standance component.
+
+Services- 
+What is Services 
+A Service is like a helper class.
+It is used to store data or share logic that many components can use.
+Instead of writing the same code in every component, we write it once in a sevice.
+Command- ng g s sevice
+
+Routing:
+Navigation between one page to another.

@@ -1,49 +1,71 @@
-let myNum = new Number(123.4567);
-
-console.log(myNum); //[Number: 123.4567]
-console.log(myNum.toString());//123.4567
-console.log(myNum.toString().length);//8
-
-console.log(myNum.toFixed());//123 //toFixed() gives an approximate (rounded) value, not an exact cut value.
-console.log(myNum.toFixed(2));//123.46 //toFixed(n) rounds the number to n decimal places.
-console.log(myNum.toFixed(0));//123
+//We can declare object using two types 
+// 1] object literal
+// 2] object singleton
 
 
-console.log("-------------------------------");
-let myNum2 = new Number(123);
-console.log(myNum2);
-console.log(myNum2.toString());
-console.log(myNum2.toString().length);//3
+// 1]object literal
+let user = {
+    name: "Swapnil",
+    age: 20,
+    email:"swapnil@gmail.com",
+    city:"miraj",
+    isLogin: true,
+    lastLoginDate : ['sun','Mon','Tues','Wed'],
+    "full Name" : "Swapnil Bhosale"
+}
+console.log(user);
+console.log(user.email);
+console.log(user.lastLoginDate);
+console.log(user["full Name"]);
+
+user.email = "user@gmail.com";
+console.log(user.email);
+//Object.freeze(user);//Freeze Value
+user.email = "abc@gmail.com";
+console.log(user.email);
+
+//Symbol Example
+const mysymbol=Symbol("WT")
+const myobj1={
+    [mysymbol]:"Hello",
+
+}
+console.log(myobj1);
+console.log(typeof(myobj1));
+
+user.greeting = function(){
+    console.log("Hello.js");
+    
+}
+console.log(user.greeting());
+
+user.greeting2 = function(){
+    console.log(`email : ${this.email}`);
+    
+}
+console.log(user.greeting2());
+
+//2]object singleton
+const user = new Object;
+console.log(user);
 
 
-console.log("-------------------------------");
-//When we build e-commerce website and precision's value is so long.
-let t = 10000000000;
-console.log(t);
-console.log(t.toLocaleString('en-In'));//10,00,00,00,000  //Indian Standard
+//non-singleton object
+const user2 = {};
+user2.id = 123;
+user2.name = "Swapnil";
+user2.city = "Miraj";
+user2.isLogin = true
+console.log(user2);
 
 
-console.log("-------------------------------");
-//Math
-console.log("Math");
-console.log(Math.abs(-583));//583
-console.log(Math.round(4.7));//5
-console.log(Math.round(4.3));//4
-console.log(Math.ceil(4.6));//5
-console.log(Math.floor(4.6));//4
-console.log(Math.min(1,2,3,4));//1
-console.log(Math.max(1,2,5,6));//6
-
-
-
-//HW
-console.log(Math.random());//returns a number from 0 (inclusive) up to but not including 1.
-
-console.log(Math.floor(Math.random() * 10)); //floor removes decimals.
-
-console.log(Math.random() * 100); 
-
-
-
-
-console.log(Math.PI); //Gives value of pi.
+//nested object 
+const regularUser = {
+    email:"xyz@gmail.com",
+    fullname:{
+        fname:"Swapnil",
+        lname:"Bhosale"
+    }
+}
+console.log(regularUser);
+console.log(regularUser.fullname.fname);

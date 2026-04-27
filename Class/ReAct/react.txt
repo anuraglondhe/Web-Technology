@@ -1,0 +1,45 @@
+ReAct is javascript library developed by meta.
+To build fast and interactive UI.
+ReAct is Single page Application.
+
+Why do we use ReAct?
+Problem with javascript full page reload complex dom manipulation. Hard to manage large apps.
+
+Updates only required part, 
+Uses reusable components
+
+
+SPA (Single page Application):
+eg. Instagram, Facebook
+When you click page does not reload only content loads.
+
+ReAct creates a copy of real dom its called virtual DOM.
+When data changes ReAct Updates virtual dom. Updates only changes parts in real dom.   -- Result: High Performance
+
+Tool Installation:
+Editor: Visual Studio Code
+
+Command:
+npm create vite@latest StudentApp
+
+vite : 
+is a fast build Tool
+npm:
+install dependencies
+npm run dev:
+
+component:
+is a heart of ReAct.
+Command: 
+Two types of component.
+1.Functional components
+-A Function can return only once.
+After once the second line never exicutes
+
+
+
+
+Activity:
+1. Different between ReAct and angular.
+2. 
+

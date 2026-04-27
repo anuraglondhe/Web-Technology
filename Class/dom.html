@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Learning</title>
+
+    <style>
+        .bg-black {
+            background-color: #212121;
+            color: #fff;
+        }
+
+        .highlight {
+            color: yellow;
+        }
+    </style>
+</head>
+
+<body class="bg-black">
+
+    <div>
+        <h1 id="title" class="heading">
+            DOM learning on chai aur code 
+            <span id="hiddenText" style="display: none;">(Hidden Text)</span>
+        </h1>
+
+        <h2>Lorem ipsum dolor sit amet.</h2>
+        <h2>Lorem ipsum dolor sit amet.</h2>
+        <h2>Lorem ipsum dolor sit amet.</h2>
+
+        <p>Lorem ipsum dolor sit amet consectetur.</p>
+
+        <input type="password" id="password">
+
+        <ul id="list">
+            <li class="list-item" id="chiku">One</li>
+            <li class="list-item">Two</li>
+            <li class="list-item">Three</li>
+            <li class="list-item">Four</li>
+        </ul>
+
+        <button onclick="changeTitle()">Change Title</button>
+        <button onclick="toggleText()">Show/Hide Text</button>
+        <button onclick="changeList()">Change List</button>
+        <button onclick="addItem()">Add Item</button>
+    </div>
+
+    <script>
+        /*
+        ==================== DOM NOTES ====================
+
+        DOM (Document Object Model)
+        - It allows JavaScript to interact with HTML elements
+        - It is a bridge between HTML and JavaScript
+
+        Common Methods:
+        document.getElementById()
+        document.querySelector()
+        document.querySelectorAll()
+
+        You can:
+        ✔ Change content
+        ✔ Change styles
+        ✔ Add/remove elements
+        ✔ Handle events
+
+        ===================================================
+        */
+
+        // Change Title
+        function changeTitle() {
+            const title = document.getElementById("title");
+            title.innerHTML = "Learning DOM with Anurag 🚀";
+            title.classList.add("highlight");
+        }
+
+        // Show / Hide Text
+        function toggleText() {
+            const text = document.getElementById("hiddenText");
+            if (text.style.display === "none") {
+                text.style.display = "inline";
+            } else {
+                text.style.display = "none";
+            }
+        }
+
+        // Change List Items
+        function changeList() {
+            const items = document.querySelectorAll(".list-item");
+            items.forEach((item, index) => {
+                item.innerHTML = "Item " + (index + 1);
+            });
+        }
+
+        // Add New List Item
+        function addItem() {
+            const ul = document.getElementById("list");
+            const li = document.createElement("li");
+            li.innerHTML = "New Item";
+            li.className = "list-item";
+            ul.appendChild(li);
+        }
+    </script>
+
+</body>
+</html>
