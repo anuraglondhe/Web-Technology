@@ -1,0 +1,24 @@
+React :-
+ - React is a JS library used to build UI.
+ - It helps to create reusable components.
+
+JSX :-
+ - JavaScript + XML.
+ - It allows HTML inside JS.
+ - Ex. 
+    const html = <h1> Hellow students </h1>
+
+Functional Components:-
+ - Simple JS functions that writen JSX.
+ -Ex.
+    function welcome(){
+        <h1>Hello </h1>
+    }
+
+
+Activity:-
+1. what is react why we use
+2. what is market hipe of react.
+3. what is JSX.
+4. what is functional components in react.
+5. what is props. 
