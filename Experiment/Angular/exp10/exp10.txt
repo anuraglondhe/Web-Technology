@@ -1,0 +1,18 @@
+React is library developed for notification
+
+React is javascript library used to build user interfaces. It helps to create reusable components. 
+JSx: javascript + xml it allows writing html inside javascript.
+eg. 
+const elements = <h1h>ello student<h1>
+
+Simple javascript function 
+function welcome{
+    return <h1>hello<h1>
+}
+
+Activity:
+1. What is React , why we use, market hype?
+
+What is JSx?
+What is functional in React?
+What is props?

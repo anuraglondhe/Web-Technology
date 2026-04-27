@@ -1,0 +1,1 @@
+Create an Angular Student management application using components and data binding. Tell me step by step . At a time one tell 1 step 

@@ -1,0 +1,31 @@
+.box{
+    background-color: rgb(77, 152, 106);
+    padding: 50px 250px;
+    border-radius: 50px;
+    box-shadow: 0 40px 20px rgb(83, 83, 89);
+    width: 300px;
+}
+
+input{
+    background-color: rgb(176, 219, 219);
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border-radius: 50px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+label{
+    font-weight: bold;
+}
+
+button{
+    background-color: rgb(164, 80, 242);
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border-radius: 50px;
+    border: 1px solid #ccc;
+    outline: none;
+}
