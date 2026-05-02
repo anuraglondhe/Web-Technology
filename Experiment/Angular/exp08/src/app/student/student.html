@@ -4,10 +4,11 @@
 <h3>Department: {{dept}}</h3>
 
 <h2>ngModel</h2>
-<input [(ngModel)] = "name" placeholder="name"/>
+<input [(ngModel)]="name" placeholder="name"/>
 
-<button (click)=changeName()>Change Name</button>
+<button (click)="changeName()">Change Name</button>
 
 <ul>
-    <li *ngfor="let city of cityArr">{{city}}</li>
+    <!-- ✅ Fixed: *ngFor (capital F) -->
+    <li *ngFor="let city of cityArr">{{city}}</li>
 </ul>
